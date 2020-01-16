@@ -5,3 +5,37 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Game.destroy_all
+Partner.destroy_all
+ActivePartner.destroy_all
+
+yoyo = Game.create(name: 'Yossarian',
+    dayCount: 0,
+    money: 100,
+    sanity: 50,
+    flown: 10,
+    goal: 40,
+    soundOn: true,
+    timings: 'slow'
+)
+LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit nunc, molestie sit amet vestibulum quis, ultricies at eros. Suspendisse potenti. Aliquam at dolor tortor. Pellentesque viverra pharetra enim eu vulputate. Ut sodales odio eu malesuada rutrum. Aliquam a volutpat lectus. Maecenas efficitur risus mi, at volutpat elit ultricies non. Quisque malesuada, urna non faucibus ornare, justo ligula pellentesque lacus, ultricies dapibus justo eros a ex. Integer et maximus nisl. Phasellus feugiat iaculis nisl vitae condimentum. Curabitur imperdiet sodales est, in tristique libero fringilla eu. Phasellus eget euismod mi. Ut in aliquam enim. Sed scelerisque iaculis ante vitae viverra.'
+
+DEFAULT_PARTNERS = [{name: 'Milo', description: LOREM_IPSUM, sanityChange: -2},
+    {name: 'Nately', description: LOREM_IPSUM, sanityChange: 0},
+    {name: 'McWatt', description: LOREM_IPSUM, sanityChange: -3},
+    {name: 'Orr', description: LOREM_IPSUM, sanityChange: -3},
+    {name: 'Aarfy', description: LOREM_IPSUM, sanityChange: -5},
+    {name: 'Appleby', description: LOREM_IPSUM, sanityChange: -1},
+    {name: 'Clevinger', description: LOREM_IPSUM, sanityChange: 0},
+    {name: 'Dunbar', description: LOREM_IPSUM, sanityChange: 0},
+    {name: 'Snowden', description: LOREM_IPSUM, sanityChange: 0},
+    {name: 'Sammy Singer', description: LOREM_IPSUM, sanityChange: 0},
+    {name: 'Kraft', description: LOREM_IPSUM, sanityChange: 0},
+    {name: 'Huple', description: LOREM_IPSUM, sanityChange: 0},
+    {name: 'Nurse ?', description: LOREM_IPSUM} ]
+
+DEFAULT_PARTNERS.each {|partner| Partner.create(partner)}
+
+Partner.all.each {|partner| ActivePartner.create(partner: partner, game: yoyo)}
