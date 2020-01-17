@@ -7,7 +7,7 @@ class GameSerializer
         format = {
             include: { 
                 partners: {
-                    except: [:id, :created_at, :updated_at]
+                    except: [:created_at, :updated_at]
                 }
             }
         }

@@ -17,6 +17,7 @@ yoyo = Game.create(name: 'Yossarian',
     sanity: 50,
     flown: 10,
     goal: 40,
+    injury: '',
     soundOn: true,
     timings: 'slow'
 )
