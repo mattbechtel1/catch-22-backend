@@ -6,7 +6,7 @@ class GameSerializer
     def to_serialized_json
         format = {
             include: { 
-                partners: {
+                characters: {
                     except: [:created_at, :updated_at]
                 }
             }

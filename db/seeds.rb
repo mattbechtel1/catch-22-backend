@@ -8,8 +8,8 @@
 
 
 Game.destroy_all
-Partner.destroy_all
-ActivePartner.destroy_all
+Character.destroy_all
+GameCharacter.destroy_all
 
 yoyo = Game.create(name: 'Yossarian',
     dayCount: 0,
@@ -19,24 +19,28 @@ yoyo = Game.create(name: 'Yossarian',
     goal: 40,
     injury: '',
     soundOn: true,
-    timings: 'slow'
+    timings: 'slow',
+    duckett: 'available'
 )
 LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit nunc, molestie sit amet vestibulum quis, ultricies at eros. Suspendisse potenti. Aliquam at dolor tortor. Pellentesque viverra pharetra enim eu vulputate. Ut sodales odio eu malesuada rutrum. Aliquam a volutpat lectus. Maecenas efficitur risus mi, at volutpat elit ultricies non. Quisque malesuada, urna non faucibus ornare, justo ligula pellentesque lacus, ultricies dapibus justo eros a ex. Integer et maximus nisl. Phasellus feugiat iaculis nisl vitae condimentum. Curabitur imperdiet sodales est, in tristique libero fringilla eu. Phasellus eget euismod mi. Ut in aliquam enim. Sed scelerisque iaculis ante vitae viverra.'
 
-DEFAULT_PARTNERS = [{name: 'Milo', description: LOREM_IPSUM, sanityChange: -2},
-    {name: 'Nately', description: LOREM_IPSUM, sanityChange: 0},
-    {name: 'McWatt', description: LOREM_IPSUM, sanityChange: -3},
-    {name: 'Orr', description: LOREM_IPSUM, sanityChange: -3},
-    {name: 'Aarfy', description: LOREM_IPSUM, sanityChange: -5},
-    {name: 'Appleby', description: LOREM_IPSUM, sanityChange: -1},
-    {name: 'Clevinger', description: LOREM_IPSUM, sanityChange: 0},
-    {name: 'Dunbar', description: LOREM_IPSUM, sanityChange: 0},
-    {name: 'Snowden', description: LOREM_IPSUM, sanityChange: 0},
-    {name: 'Sammy Singer', description: LOREM_IPSUM, sanityChange: 0},
-    {name: 'Kraft', description: LOREM_IPSUM, sanityChange: 0},
-    {name: 'Huple', description: LOREM_IPSUM, sanityChange: 0},
-    {name: 'Nurse ?', description: LOREM_IPSUM} ]
+DEFAULT_PARTNERS = [
+    {name: 'Milo', description: LOREM_IPSUM, sanityChange: -2, sublist: 'special'},
+    {name: 'Nately', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
+    {name: 'McWatt', description: LOREM_IPSUM, sanityChange: -3, sublist: 'airman'},
+    {name: 'Orr', description: LOREM_IPSUM, sanityChange: -3, sublist: 'airman'},
+    {name: 'Aarfy', description: LOREM_IPSUM, sanityChange: -5, sublist: 'airman'},
+    {name: 'Appleby', description: LOREM_IPSUM, sanityChange: -1, sublist: 'airman'},
+    {name: 'Clevinger', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
+    {name: 'Dunbar', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
+    {name: 'Snowden', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
+    {name: 'Sammy Singer', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
+    {name: 'Kraft', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
+    {name: 'Huple', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
+    {name: 'Nurse Duckett', description: LOREM_IPSUM, sanityChange: 3, sublist: 'storage'},
+    {name: 'Young Recruit', description: LOREM_IPSUM, sanityChange: 0, sublist: 'storage'}
+]
 
-DEFAULT_PARTNERS.each {|partner| Partner.create(partner)}
+DEFAULT_PARTNERS.each {|partner| Character.create(partner)}
 
-Partner.all.each {|partner| ActivePartner.create(partner: partner, game: yoyo)}
+Character.all.each {|partner| GameCharacter.create(character: partner, game: yoyo)}
