@@ -22,23 +22,28 @@ yoyo = Game.create(name: 'Yossarian',
     timings: 'slow',
     duckett: 'available'
 )
-LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit nunc, molestie sit amet vestibulum quis, ultricies at eros. Suspendisse potenti. Aliquam at dolor tortor. Pellentesque viverra pharetra enim eu vulputate. Ut sodales odio eu malesuada rutrum. Aliquam a volutpat lectus. Maecenas efficitur risus mi, at volutpat elit ultricies non. Quisque malesuada, urna non faucibus ornare, justo ligula pellentesque lacus, ultricies dapibus justo eros a ex. Integer et maximus nisl. Phasellus feugiat iaculis nisl vitae condimentum. Curabitur imperdiet sodales est, in tristique libero fringilla eu. Phasellus eget euismod mi. Ut in aliquam enim. Sed scelerisque iaculis ante vitae viverra.'
+LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit nunc, molestie sit amet vestibulum quis, ultricies at eros. Suspendisse potenti. Aliquam at dolor tortor.'
 
 DEFAULT_PARTNERS = [
-    {name: 'Milo', description: LOREM_IPSUM, sanityChange: -2, sublist: 'special'},
-    {name: 'Nately', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
-    {name: 'McWatt', description: LOREM_IPSUM, sanityChange: -3, sublist: 'airman'},
-    {name: 'Orr', description: LOREM_IPSUM, sanityChange: -3, sublist: 'airman'},
-    {name: 'Aarfy', description: LOREM_IPSUM, sanityChange: -5, sublist: 'airman'},
-    {name: 'Appleby', description: LOREM_IPSUM, sanityChange: -1, sublist: 'airman'},
-    {name: 'Clevinger', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
-    {name: 'Dunbar', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
-    {name: 'Snowden', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
-    {name: 'Sammy Singer', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
-    {name: 'Kraft', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
-    {name: 'Huple', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman'},
-    {name: 'Nurse Duckett', description: LOREM_IPSUM, sanityChange: 3, sublist: 'storage'},
-    {name: 'Young Recruit', description: LOREM_IPSUM, sanityChange: 0, sublist: 'storage'}
+    {name: 'Milo', description: LOREM_IPSUM, sanityChange: -2, sublist: 'special', occupation: 'Mess Officer / Capitalist'},
+    {name: 'Nately', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman', occupation: 'Lieutenant'},
+    {name: 'McWatt', description: LOREM_IPSUM, sanityChange: -3, sublist: 'airman', occupation: 'Pilot'},
+    {name: 'Orr', description: LOREM_IPSUM, sanityChange: -3, sublist: 'airman', occupation: 'Pilot'},
+    {name: 'Aarfy', description: LOREM_IPSUM, sanityChange: -5, sublist: 'airman', occupation: 'Navigator'},
+    {name: 'Clevinger', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman', occupation: 'Pilot'},
+    {name: "Havermeyer", description: LOREM_IPSUM, sanityChange: -5, sublist: 'airman', occupation: 'Lead Bombardier'},
+    {name: 'Dunbar', description: LOREM_IPSUM, sanityChange: 1, sublist: 'airman', occupation: 'Pilot'},
+    {name: 'Kid Sampson', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman', occupation: 'Pilot'},
+    {name: 'Snowden', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman', occupation: 'Gunner'},
+    {name: 'Hungry Joe', description: LOREM_IPSUM, sanityChange: -4, sublist: 'airman', occupation: 'Pilot'},
+    {name: 'Huple', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman', occupation: 'Pilot'},
+    {name: 'Dobbs', description: LOREM_IPSUM, sanityChange: -4, sublist: 'airman', occupation: 'Pilot'},
+    {name: 'Major Major Major', description: LOREM_IPSUM, sanityChange: 0, sublist: 'airman', occupation: nil},
+    {name: 'Major Major Major Major', description: LOREM_IPSUM, sanityChange: nil, sublist: 'storage', occupation: 'Major'},
+    {name: 'Nurse Duckett', description: LOREM_IPSUM, sanityChange: 3, sublist: 'storage', occupation: 'Nurse'},
+    {name: 'Recruit', description: LOREM_IPSUM, sanityChange: 0, sublist: 'storage', occupation: 'Pilot'},
+    {name: 'Doc Daneeka', description: LOREM_IPSUM, sanityChange: nil, sublist: 'special', occupation: 'Medical Officer'},
+    {name: "Nately's Whore", description: LOREM_IPSUM, sanityChange: nil, sublist: 'storage', occupation: 'Lady of the Night'}
 ]
 
 DEFAULT_PARTNERS.each {|partner| Character.create(partner)}
