@@ -32,8 +32,8 @@ class GamesController < ApplicationController
         game.update(games_params)
         game_characters = GameCharacter.where(game_id: params[:id])
                 
-        deletables = game_characters.select {|game_character| params[:partner_ids].exclude?(game_character.id)}
-                
+        deletables = game_characters.select {|game_character| params[:partner_ids].exclude?(game_character.character_id)}
+
         deletables.each {|deletable| 
             GameCharacter.find(deletable.id).destroy
         }
