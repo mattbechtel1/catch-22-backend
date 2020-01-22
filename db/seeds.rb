@@ -10,8 +10,11 @@
 Game.destroy_all
 Character.destroy_all
 GameCharacter.destroy_all
+User.destroy_all
 
-yoyo = Game.create(name: 'Yossarian',
+yoyo = User.create(username: 'Yoyo', password: 'heller')
+
+game_sample = Game.create(name: 'Yossarian',
     dayCount: 0,
     money: 100,
     sanity: 50,
@@ -22,9 +25,11 @@ yoyo = Game.create(name: 'Yossarian',
     passCount: 0,
     soundOn: true,
     timings: 4500,
-    duckett: 'available'
+    duckett: 'available',
+    user: yoyo
 )
-LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit nunc, molestie sit amet vestibulum quis, ultricies at eros. Suspendisse potenti. Aliquam at dolor tortor.'
+
+# LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit nunc, molestie sit amet vestibulum quis, ultricies at eros. Suspendisse potenti. Aliquam at dolor tortor.'
 
 DEFAULT_PARTNERS = [
     {name: 'Aarfy', image_url: 'https://vignette.wikia.nocookie.net/catch22/images/9/98/Aarfy.jpg', description: "'Aarfy' Aardvark is a navigator who often gets lost during missions. He is oblivious to incoming incoming flak and anti-aircraft fire. Aarfy tries to suck up to the wealthy Nately in an attempt to climb socially.", sanityChange: -3, sublist: 'airman', occupation: 'Navigator', erraticness: 7},
@@ -50,4 +55,4 @@ DEFAULT_PARTNERS = [
 
 DEFAULT_PARTNERS.each {|partner| Character.create(partner)}
 
-Character.all.each {|partner| GameCharacter.create(character: partner, game: yoyo)}
+Character.all.each {|partner| GameCharacter.create(character: partner, game: game_sample)}

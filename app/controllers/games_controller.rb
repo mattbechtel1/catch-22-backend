@@ -19,7 +19,8 @@ class GamesController < ApplicationController
             timings: 4500,
             injury: nil,
             duckett: 'available',
-            characters: all_characters
+            characters: all_characters,
+            user_id: games_params[:user_id]
         )
         render json: GameSerializer.new(new_game).to_serialized_json
     end
@@ -46,7 +47,7 @@ class GamesController < ApplicationController
     private
 
     def games_params
-        params.require(:game).permit(:name, :dayCount, :money, :sanity, :flown, :goal, :soundOn, :timings, :duckett, :injury)
+        params.require(:game).permit(:name, :user_id, :dayCount, :money, :sanity, :flown, :goal, :soundOn, :timings, :duckett, :injury)
     end
 
 end
