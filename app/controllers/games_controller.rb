@@ -10,7 +10,7 @@ class GamesController < ApplicationController
             name: games_params[:name],
             dayCount: 0,
             passCount: 0,
-            leave: 0.4,
+            leave: 1.0,
             money: 50,
             sanity: 50,
             flown: 10,
