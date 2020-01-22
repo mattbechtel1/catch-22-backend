@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_19_020859) do
+ActiveRecord::Schema.define(version: 2020_01_21_141424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,11 +44,13 @@ ActiveRecord::Schema.define(version: 2020_01_19_020859) do
     t.integer "flown"
     t.integer "goal"
     t.boolean "soundOn"
-    t.string "timings"
+    t.integer "timings"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "injury"
     t.string "duckett"
+    t.float "leave"
+    t.integer "passCount"
   end
 
   add_foreign_key "game_characters", "characters"

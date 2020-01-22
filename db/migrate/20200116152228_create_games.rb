@@ -8,7 +8,7 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.integer :flown
       t.integer :goal
       t.boolean :soundOn
-      t.string :timings
+      t.integer :timings
 
       t.timestamps
     end

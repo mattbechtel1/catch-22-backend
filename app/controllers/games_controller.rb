@@ -9,12 +9,14 @@ class GamesController < ApplicationController
         new_game = Game.create(
             name: games_params[:name],
             dayCount: 0,
+            passCount: 0,
+            leave: 0.4,
             money: 50,
             sanity: 50,
             flown: 10,
             goal: 40,
             soundOn: true,
-            timings: 'slow',
+            timings: 4500,
             injury: nil,
             duckett: 'available',
             characters: all_characters
