@@ -29,8 +29,6 @@ game_sample = Game.create(name: 'Yossarian',
     user: yoyo
 )
 
-# LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit nunc, molestie sit amet vestibulum quis, ultricies at eros. Suspendisse potenti. Aliquam at dolor tortor.'
-
 DEFAULT_PARTNERS = [
     {name: 'Aarfy', image_url: 'https://vignette.wikia.nocookie.net/catch22/images/9/98/Aarfy.jpg', description: "'Aarfy' Aardvark is a navigator who often gets lost during missions. He is oblivious to incoming incoming flak and anti-aircraft fire. Aarfy tries to suck up to the wealthy Nately in an attempt to climb socially.", sanityChange: -3, sublist: 'airman', occupation: 'Navigator', erraticness: 7},
     {name: 'Clevinger', image_url: 'https://vignette.wikia.nocookie.net/catch22/images/0/03/Clevinger.jpg', description: 'Clevenger is an idealist member of the squardon. He believes in and defends the ideals of the United States.', sanityChange: 0, sublist: 'airman', occupation: 'Pilot', erraticness: 6},
